@@ -7,4 +7,5 @@ Scanpy(processing file data and plotting), FBS(packaging), PyQt5(GUI)
 # Instructions
 Start a virtual environment<br/>
 Use `pip3 install scanpy` and `pip3 install pyqt5` `pip3 install fbs` to get the required libraries.<br/>
-Navigate to src/main/python and run `main.py`
+Run `fbs run`</br>
+Or alternatively, navigate to src/main/python and run `python3 main.py`

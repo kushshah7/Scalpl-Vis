@@ -147,11 +147,11 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): # Initialize and connect a
                 item.setCheckState(QtCore.Qt.Unchecked)
 
     def gene_violin_Plot(self):
-        try:
+        try: # Iterates through and checks what items are checked in the QList
             self.choices = [self.model.item(i).text() for i in
                             range(self.model.rowCount())
                             if self.model.item(i).checkState()
-                            == QtCore.Qt.Checked] # Iterates through and checks what items are checked in the QList
+                            == QtCore.Qt.Checked]
         except AttributeError:
             QMessageBox.about(self, "Error", "Please select a h5ad file and gene(s) to plot")
         except OSError:
@@ -159,7 +159,6 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): # Initialize and connect a
         print('Plotting...')
         print(self.choices)
         try:
-
             datafile = sc.read_h5ad(fileLoc, backed=None, chunk_size=7000)
             sc.pl.violin(datafile, self.choices)
         except ValueError:

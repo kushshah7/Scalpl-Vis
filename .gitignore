@@ -1,0 +1,3 @@
+# Ignore Venv and Target
+venv/
+target/

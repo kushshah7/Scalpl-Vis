@@ -1,0 +1,8 @@
+{
+    "app_name": "Scalpl-Vis",
+    "author": "Kush Shah",
+    "main_module": "src/main/python/main.py",
+    "version": "1.3.0",
+    "hidden_imports": ["cython", "sklearn", "sklearn.utils._cython_blas", "sklearn.neighbors.typedefs", "sklearn.neighbors.quad_tree", "scipy._lib.messagestream", "sklearn.tree", "sklearn.tree._utils"]
+
+}

@@ -1,12 +1,12 @@
 import sys
 import os
-import multiprocessing # Stops multiple app opens
+import multiprocessing # For multiple app opens issue. Will be fixed in future pyinstaller fix
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
-#import numpy.random.common # Needed for fbs build
-#import numpy.random.bounded_integers # Needed for fbs build
-#import numpy.random.entropy # Needed for fbs build
+#import numpy.random.common # UNCOMMENT FOR FBS BUILD. Will be fixed in future version of numpy
+#import numpy.random.bounded_integers # UNCOMMENT FOR FBS BUILD. Will be fixed in future version of numpy
+#import numpy.random.entropy # UNCOMMENT FOR FBS BUILD. Will be fixed in future version of numpy
 import scanpy as sc
-import matplotlib
+#import matplotlib # UNCOMMENT FOR FBS BUILD
 matplotlib.use('Qt5Agg')
 from fbs_runtime.application_context.PyQt5 import ApplicationContext, \
     cached_property

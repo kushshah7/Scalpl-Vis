@@ -13,7 +13,7 @@ from fbs_runtime.application_context.PyQt5 import ApplicationContext, \
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton,
                              QToolTip, QMessageBox, QListWidget, QListView, QLabel, QFileDialog, QWidget, QLineEdit, QAction, QAbstractItemView)
 
-def resource_path(relative_path): # Get the UI Full Path, dynamic to each user
+def resource_path(relative_path): # Get the UI Full Path *ONLY REQUIRED FOR FBS BUILD*
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
@@ -51,7 +51,6 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): # Initialize and connect a
         self.gene_search.textChanged.connect(self.searchItem) #Dynamic Search
         self.gene_search.setPlaceholderText('Search...')
 
-
     def browse_file(self):
         checked = False
         global fileLoc
@@ -63,7 +62,6 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): # Initialize and connect a
             QMessageBox.about(self, "Success!", fileName + " Selected!")
             self.file_selected.setText(fileName)
             try:
-
                 adata = sc.read_h5ad(fileLoc, backed=None, chunk_size=7000)
                 gnames = (adata.var_names) # Gene Expressions from data file
                 gene_counts = str(len(adata.var_names))

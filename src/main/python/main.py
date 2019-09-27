@@ -25,7 +25,7 @@ def resource_path(relative_path): # Get the UI Full Path *ONLY REQUIRED FOR FBS 
 qtCreatorFile = resource_path("mainwindow.ui") # UI file from QT Designer here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile) #loads UI class
 
-class AppContext(ApplicationContext):  #FOR FBS PACKAGING
+class AppContext(ApplicationContext): #FOR FBS PACKAGING
     def run(self):
         self.main_window.show()
         return self.app.exec_()
